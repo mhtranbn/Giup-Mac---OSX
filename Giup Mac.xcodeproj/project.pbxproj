@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322950AF1C3AFC80002F7F5F /* Cac phim tat.png in Resources */ = {isa = PBXBuildFile; fileRef = 322950AE1C3AFC80002F7F5F /* Cac phim tat.png */; };
+		322950B01C3AFC80002F7F5F /* Cac phim tat.png in Resources */ = {isa = PBXBuildFile; fileRef = 322950AE1C3AFC80002F7F5F /* Cac phim tat.png */; };
+		322950B11C3AFC80002F7F5F /* Cac phim tat.png in Resources */ = {isa = PBXBuildFile; fileRef = 322950AE1C3AFC80002F7F5F /* Cac phim tat.png */; };
+		322950B31C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */; };
+		322950B41C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */; };
+		322950B51C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */; };
+		322950B81C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */; };
+		322950B91C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */; };
+		322950BA1C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */; };
 		327995C71C3717AF0074FFF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327995C61C3717AF0074FFF3 /* AppDelegate.swift */; };
 		327995C91C3717AF0074FFF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327995C81C3717AF0074FFF3 /* Assets.xcassets */; };
 		327995CC1C3717AF0074FFF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327995CA1C3717AF0074FFF3 /* MainMenu.xib */; };
@@ -44,9 +53,6 @@
 		32FC8B631C384263003B8AE6 /* batery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1C1C384263003B8AE6 /* batery.jpg */; };
 		32FC8B641C384263003B8AE6 /* batery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1C1C384263003B8AE6 /* batery.jpg */; };
 		32FC8B651C384263003B8AE6 /* batery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1C1C384263003B8AE6 /* batery.jpg */; };
-		32FC8B661C384263003B8AE6 /* Cacphimtat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1D1C384263003B8AE6 /* Cacphimtat.jpg */; };
-		32FC8B671C384263003B8AE6 /* Cacphimtat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1D1C384263003B8AE6 /* Cacphimtat.jpg */; };
-		32FC8B681C384263003B8AE6 /* Cacphimtat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1D1C384263003B8AE6 /* Cacphimtat.jpg */; };
 		32FC8B6C1C384263003B8AE6 /* che do bao hanh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1F1C384263003B8AE6 /* che do bao hanh.jpg */; };
 		32FC8B6D1C384263003B8AE6 /* che do bao hanh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1F1C384263003B8AE6 /* che do bao hanh.jpg */; };
 		32FC8B6E1C384263003B8AE6 /* che do bao hanh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B1F1C384263003B8AE6 /* che do bao hanh.jpg */; };
@@ -187,6 +193,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		322950AE1C3AFC80002F7F5F /* Cac phim tat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cac phim tat.png"; sourceTree = "<group>"; };
+		322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2727814_phim_tat.jpg; sourceTree = "<group>"; };
+		322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TiengSaoNguoiDaDo.mp3; sourceTree = "<group>"; };
 		327995C31C3717AF0074FFF3 /* Giup Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giup Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		327995C61C3717AF0074FFF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327995C81C3717AF0074FFF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,7 +223,6 @@
 		32FC8B1A1C384263003B8AE6 /* bao hanh viet nam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bao hanh viet nam.png"; sourceTree = "<group>"; };
 		32FC8B1B1C384263003B8AE6 /* Batbuoc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Batbuoc.jpg; sourceTree = "<group>"; };
 		32FC8B1C1C384263003B8AE6 /* batery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = batery.jpg; sourceTree = "<group>"; };
-		32FC8B1D1C384263003B8AE6 /* Cacphimtat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cacphimtat.jpg; sourceTree = "<group>"; };
 		32FC8B1F1C384263003B8AE6 /* che do bao hanh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "che do bao hanh.jpg"; sourceTree = "<group>"; };
 		32FC8B201C384263003B8AE6 /* contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact.png; sourceTree = "<group>"; };
 		32FC8B211C384263003B8AE6 /* Control Panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Control Panel.png"; sourceTree = "<group>"; };
@@ -282,6 +290,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		322950B61C3C418D002F7F5F /* MUSIC */ = {
+			isa = PBXGroup;
+			children = (
+				322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */,
+			);
+			name = MUSIC;
+			sourceTree = "<group>";
+		};
+		322950BB1C3D3679002F7F5F /* PURELAYOUT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PURELAYOUT;
+			sourceTree = "<group>";
+		};
 		327995BA1C3717AF0074FFF3 = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +328,8 @@
 		327995C51C3717AF0074FFF3 /* Giup Mac */ = {
 			isa = PBXGroup;
 			children = (
+				322950BB1C3D3679002F7F5F /* PURELAYOUT */,
+				322950B61C3C418D002F7F5F /* MUSIC */,
 				327995F01C3717F20074FFF3 /* MODEL */,
 				327995EF1C3717DA0074FFF3 /* GUI */,
 				327995C81C3717AF0074FFF3 /* Assets.xcassets */,
@@ -366,8 +391,8 @@
 				32FC8B1A1C384263003B8AE6 /* bao hanh viet nam.png */,
 				32FC8B1B1C384263003B8AE6 /* Batbuoc.jpg */,
 				32FC8B1C1C384263003B8AE6 /* batery.jpg */,
-				32FC8B1D1C384263003B8AE6 /* Cacphimtat.jpg */,
 				32FC8B1F1C384263003B8AE6 /* che do bao hanh.jpg */,
+				322950AE1C3AFC80002F7F5F /* Cac phim tat.png */,
 				32FC8B201C384263003B8AE6 /* contact.png */,
 				32FC8B211C384263003B8AE6 /* Control Panel.png */,
 				32FC8B221C384263003B8AE6 /* Dock.png */,
@@ -375,6 +400,7 @@
 				32FC8B241C384263003B8AE6 /* Energy Saver.png */,
 				32FC8B2A1C384263003B8AE6 /* GiupMacOs.png */,
 				32FC8B2B1C384263003B8AE6 /* Gobo.png */,
+				322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */,
 				32FC8B2C1C384263003B8AE6 /* he dieu hanh mac os x.png */,
 				32FC8B2D1C384263003B8AE6 /* icon copy.jpg */,
 				32FC8B2E1C384263003B8AE6 /* icon_Mac.png */,
@@ -531,6 +557,7 @@
 				32FC8B4E1C384263003B8AE6 /*  các phím tắt hữa dụng.png in Resources */,
 				32FC8B961C384263003B8AE6 /* Keyboard.png in Resources */,
 				32FC8BD51C384263003B8AE6 /* Timtap.jpg in Resources */,
+				322950B81C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */,
 				32FC8BDE1C384263003B8AE6 /* trackpad mac error.jpg in Resources */,
 				32FC8BE11C384263003B8AE6 /* tui chong soc.png in Resources */,
 				32FC8B871C384263003B8AE6 /* Gobo.png in Resources */,
@@ -550,12 +577,12 @@
 				32FC8BCF1C384263003B8AE6 /* Tăng tốc tối đa máy Mac.jpg in Resources */,
 				32FC8B0F1C37C1E1003B8AE6 /* SecondNSWindowController.xib in Resources */,
 				32FC8BB11C384263003B8AE6 /* moreApps.png in Resources */,
-				32FC8B661C384263003B8AE6 /* Cacphimtat.jpg in Resources */,
 				32FC8BCC1C384263003B8AE6 /* so lan xac.png in Resources */,
 				32FC8BD81C384263003B8AE6 /* Top Menu.png in Resources */,
 				32FC8BEA1C384263003B8AE6 /* Windows on Mac.png in Resources */,
 				32FC8B781C384263003B8AE6 /* Dontrong.jpg in Resources */,
 				32FC8B8D1C384263003B8AE6 /* icon copy.jpg in Resources */,
+				322950AF1C3AFC80002F7F5F /* Cac phim tat.png in Resources */,
 				327995CC1C3717AF0074FFF3 /* MainMenu.xib in Resources */,
 				32FC8BD21C384263003B8AE6 /* Thietlap.jpg in Resources */,
 				32FC8B601C384263003B8AE6 /* Batbuoc.jpg in Resources */,
@@ -577,6 +604,7 @@
 				32FC8BDB1C384263003B8AE6 /* track.png in Resources */,
 				32FC8BAB1C384263003B8AE6 /* Mission control.png in Resources */,
 				32FC8B5D1C384263003B8AE6 /* bao hanh viet nam.png in Resources */,
+				322950B31C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
 				32FC8B991C384263003B8AE6 /* Khoiphucketnoi.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,12 +620,14 @@
 				32FC8BCD1C384263003B8AE6 /* so lan xac.png in Resources */,
 				32FC8BA61C384263003B8AE6 /* macPC.png in Resources */,
 				32FC8BE21C384263003B8AE6 /* tui chong soc.png in Resources */,
+				322950B01C3AFC80002F7F5F /* Cac phim tat.png in Resources */,
 				32FC8B761C384263003B8AE6 /* Dock.png in Resources */,
 				32FC8B8E1C384263003B8AE6 /* icon copy.jpg in Resources */,
 				32FC8BA31C384263003B8AE6 /* Language & Text.png in Resources */,
 				32FC8B851C384263003B8AE6 /* GiupMacOs.png in Resources */,
-				32FC8B671C384263003B8AE6 /* Cacphimtat.jpg in Resources */,
 				32FC8B641C384263003B8AE6 /* batery.jpg in Resources */,
+				322950B41C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
+				322950B91C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */,
 				32FC8BAC1C384263003B8AE6 /* Mission control.png in Resources */,
 				32FC8B4F1C384263003B8AE6 /*  các phím tắt hữa dụng.png in Resources */,
 				32FC8BC11C384263003B8AE6 /* resetnpram.jpg in Resources */,
@@ -648,12 +678,14 @@
 				32FC8BCE1C384263003B8AE6 /* so lan xac.png in Resources */,
 				32FC8BA71C384263003B8AE6 /* macPC.png in Resources */,
 				32FC8BE31C384263003B8AE6 /* tui chong soc.png in Resources */,
+				322950B11C3AFC80002F7F5F /* Cac phim tat.png in Resources */,
 				32FC8B771C384263003B8AE6 /* Dock.png in Resources */,
 				32FC8B8F1C384263003B8AE6 /* icon copy.jpg in Resources */,
 				32FC8BA41C384263003B8AE6 /* Language & Text.png in Resources */,
 				32FC8B861C384263003B8AE6 /* GiupMacOs.png in Resources */,
-				32FC8B681C384263003B8AE6 /* Cacphimtat.jpg in Resources */,
 				32FC8B651C384263003B8AE6 /* batery.jpg in Resources */,
+				322950B51C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
+				322950BA1C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */,
 				32FC8BAD1C384263003B8AE6 /* Mission control.png in Resources */,
 				32FC8B501C384263003B8AE6 /*  các phím tắt hữa dụng.png in Resources */,
 				32FC8BC21C384263003B8AE6 /* resetnpram.jpg in Resources */,

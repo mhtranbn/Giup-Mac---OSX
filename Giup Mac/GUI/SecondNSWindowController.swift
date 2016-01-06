@@ -10,7 +10,7 @@ import Cocoa
 
 
 
-//class SecondNSWindowController: NSWindowController {
+//extension SecondNSWindowController {
 //
 //    override func windowDidLoad() {
 //        super.windowDidLoad()

@@ -17,6 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        
         masterNSViewController = MasterNSViewController(nibName: "MasterNSViewController", bundle: nil)
 //        masterNSViewController 
         window.contentView!.addSubview(masterNSViewController.view)

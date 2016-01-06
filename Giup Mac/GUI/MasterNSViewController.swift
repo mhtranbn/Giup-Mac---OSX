@@ -7,8 +7,86 @@
 //
 
 import Cocoa
+import AVFoundation
+
+class ThirdNSWindowController: NSWindowController {
+    
+    
+    @IBOutlet weak var thirdTableView: NSTableView!
+    @IBOutlet weak var thirdTitleWindow: NSTextField!
+    @IBOutlet weak var thirdImageWindow: NSImageView!
+
+    @IBOutlet var thirdTextViewWindow: NSTextView!
+    var data: MenuData?
+    convenience init() {
+        self.init(windowNibName: "ThirdNSWindowController")
+    }
+    
+    func settData(data: MenuData) {
+        self.data = data
+        self.window!.title = "Phần cứng máy Mac"
+        
+        
+    }
+    
+    func selectedGiup() -> DetailStr?{
+        let selectedRow = self.thirdTableView!.selectedRow
+        if selectedRow >= 0 && selectedRow <= data!.detailData.count {
+            return data!.detailData[selectedRow]
+        }
+        return nil
+    }
+    
+    func upDateDetailInfor(giupMacS: DetailStr?) {
+        var title = ""
+        var imagePath = ""
+        var detail = ""
+        if let giupMacss = giupMacS {
+            title = giupMacss.title
+            imagePath = giupMacss.imagePath
+            detail = giupMacss.detail
+        }
+        thirdTitleWindow.stringValue = title
+        thirdImageWindow.image = NSImage(named: imagePath)
+        thirdTextViewWindow.string = detail
+        self.thirdTextViewWindow.textStorage!.font = NSFont(name: "Helvetica Neue", size: 16)
+        
+        
+    }
+    
+}
+
+extension ThirdNSWindowController: NSTableViewDataSource {
+    func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+        return data!.detailData.count
+    }
+    func tableView(tableView: NSTableView, viewForTableColumn tableColumn:NSTableColumn?, row: Int) -> NSView? {
+        let cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
+        let detailStr = data!.detailData[row]
+        cellView.imageView!.image = NSImage(named: detailStr.imagePath)
+        cellView.textField!.stringValue = detailStr.title
+        return cellView
+    }
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        if let selectedGiupTable = selectedGiup() {
+            upDateDetailInfor(selectedGiupTable)
+        }
+        
+    }
+}
+extension ThirdNSWindowController: NSTableViewDelegate {
+    
+}
 
 class SecondNSWindowController: NSWindowController {
+    
+    @IBOutlet weak var secondTableView: NSTableView!
+    @IBOutlet weak var secondTitleRow: NSTextField!
+    @IBOutlet weak var secondImage: NSImageView!
+   
+    @IBOutlet var secondTextView: NSTextView!
+    
+    
     var data: MenuData?
     convenience init() {
         self.init(windowNibName: "SecondNSWindowController")
@@ -17,7 +95,36 @@ class SecondNSWindowController: NSWindowController {
     func settData(data: MenuData) {
         
         self.data = data
+        self.window!.title = "Hệ điều hành OSX"
     }
+    
+    func selectedGiup() -> DetailStr?{
+        let selectedRow = self.secondTableView.selectedRow
+        if selectedRow >= 0 && selectedRow <= data!.detailData.count {
+            return data!.detailData[selectedRow]
+        }
+        return nil
+    }
+    
+    func updateDetailInfor(giupMacS: DetailStr?) {
+        var title = ""
+        var imagePath = ""
+        var detail = ""
+        if let giupMacss = giupMacS {
+            title = giupMacss.title
+            imagePath = giupMacss.imagePath
+            detail = giupMacss.detail
+        }
+        
+        secondTitleRow.stringValue = title
+        secondImage.image = NSImage(named: imagePath)
+        secondTextView.string = detail
+        secondTextView.textStorage?.font = NSFont(name: "Helvetica Neue", size: 16)
+        
+    }
+
+   
+    
     
     
 }
@@ -40,6 +147,12 @@ extension SecondNSWindowController: NSTableViewDataSource {
         return cellView
         
     }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        let selectedGiuptt = selectedGiup()
+        updateDetailInfor(selectedGiuptt)
+        print("++++++++")
+    }
 }
 
 extension SecondNSWindowController: NSTableViewDelegate {
@@ -48,18 +161,27 @@ extension SecondNSWindowController: NSTableViewDelegate {
 
 class MasterNSViewController: NSViewController {
     private var secondNSWindowController: SecondNSWindowController?
+    private var thirdNSWindowController: ThirdNSWindowController?
     var menuData = Array<MenuData>()
+    var backgroundMusicP : AVAudioPlayer!
     @IBOutlet weak var buttonOSX: NSButton!
+    @IBOutlet weak var buttonMayMac: NSButton!
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Auto layout
+//        let superview = self.view.superview!
+//        let constraint = NSLayoutConstraint(item: buttonOSX, attribute: .Leading, relatedBy: .Equal, toItem: superview, attribute: .Leading, multiplier: 1.0, constant: 20)
+//        superview.addConstraints(constraint)
+//        self.title = "Giúp Mac"
+//        playBackgroundMusic("TiengSaoNguoiDaDo.mp3")
         let giupMacData = MenuData(category: "macos")
         let giupMacData2 = MenuData(category: "mayMac")
         giupMacData.addData("Hệ Điều Hành Mac", imagePath: "os-x.jpg", detail: "Đối với những người dùng Windows đã quen, nay chuyển sang Mac thì đó là một sự thay đổi lớn, không phải nói là thay đổi hoàn toàn. \n Một giao diện hoàn toàn khác, Taskbar thì nằm phía trên và phía dưới là 1 thanh dock với các ứng dụng nằm trên đó. Hoàn toàn màn hình desktop không có một folder hay chương trình nào. \n Bắt đầu, click vào Finder (Finder bên Mac thì chính là My Computer bên Windows), tất cả các mục đều nằm trong Finder này. Có một phần mềm luôn chạy cùng với Mac, đó là Finder, đây chính là phần cơ bản nhất của Mac.  \n Finder có chức năng quản lý files, folders, quản lý các công việc, thao tác ... của bạn. \n Desktop là một phần trong Finder, và trong Finder cũng có 1 folders là Desktop. \n Khi ta mở một thư mục nào đó thì đó chính là Finder: \n Phía bên trái cửa sổ là Sidebar, nơi hiển thị các thông tin, Devices, Places (ở đây các bạn có thể bỏ các thư mục các bạn thích như là Dock) \n Nên ta có thể cho hiện đường dẫn của File or Folders – tại thanh bar phía dưới – bằng cách: thanh Menu – View -> Show Path Bar. \n =>Preference của Finder (phím tắt là Command + , [tất cả các ứng dụng nào khi ấn tổ hợp này là sẽ vào Preference của ứng dụng đó dùng để tinh chỉnh nhiều thứ, giống như là Options bên Windows vậy]). \n Và để coi thông tin của File hay Folder thì ta click chuột phải vào file hay folder đó, chọn Get Info, hoặc tổ hợp phím Command + I, nếu muốn xem 1 lúc nhiều file hoặc folder gộp lại thì thêm Alt (option) vậy tổ hợp phím là option + command + I")
         giupMacData.addData("Bảng điều khiển “Control Panel”", imagePath: "Control Panel.png", detail: "Nếu như người dùng Windows có bảng điều khiển Control Panel để tùy chỉnh hệ thống thì OS X cũng có mục tương đương nhưng gọi là System Preferences. Bạn vào mục này bằng cách nhấn biểu tượng Táo phía trên cùng bên trái giao diện chính OS X và chọn System Preferences.")
-        giupMacData.addData("Sử dụng chân đế Dock", imagePath: "Dock.png", detail: "Không có Start Menu và không có Taskbar, giao diện chính của Mac hoàn toàn được điều hành bởi chân đế Dock nằm phía dưới, nơi để những ứng dụng bạn hay dùng nhất. Để xem toàn bộ danh sách ứng dụng nhấn biểu tượng Launchpad (thứ 2 từ trái sang).Để thêm một ứng dụng vào Dock, bạn chỉ cần kéo thả biểu tượng ứng dụng đó xuống chỗ muốn để. Để bỏ một ứng dụng nào đó ra khỏi Dock, bạn chỉ cần kéo bỏ biểu tượng ra vùng trống.Dock cũng có chức năng tương tự như thanh Taskbar trên Windows, nơi lưu trữ những cửa sổ ứng dụng đang mở được thu gọn xuống.Dock mặc định có sẵn 2 stack phía bên trái thùng rác. Stack là alias link đến một thư mục nào đó, ta có thể thêm hoặc bớt các stack (thao tác giống như thêm một ứng dụng vào Dock), được chia ra bởi 1 hình vạch trắng phần này để chứa gọi nôm na Stack là các folder chứa các file. Khi Kich chuột phải vào một stack, có một menu hiện ra và ta có thể chỉnh các thông số của stack.")
+        giupMacData.addData("Sử dụng Dock", imagePath: "Dock.png", detail: "Không có Start Menu và không có Taskbar, giao diện chính của Mac hoàn toàn được điều hành bởi chân đế Dock nằm phía dưới, nơi để những ứng dụng bạn hay dùng nhất. Để xem toàn bộ danh sách ứng dụng nhấn biểu tượng Launchpad (thứ 2 từ trái sang).Để thêm một ứng dụng vào Dock, bạn chỉ cần kéo thả biểu tượng ứng dụng đó xuống chỗ muốn để. Để bỏ một ứng dụng nào đó ra khỏi Dock, bạn chỉ cần kéo bỏ biểu tượng ra vùng trống.Dock cũng có chức năng tương tự như thanh Taskbar trên Windows, nơi lưu trữ những cửa sổ ứng dụng đang mở được thu gọn xuống.Dock mặc định có sẵn 2 stack phía bên trái thùng rác. Stack là alias link đến một thư mục nào đó, ta có thể thêm hoặc bớt các stack (thao tác giống như thêm một ứng dụng vào Dock), được chia ra bởi 1 hình vạch trắng phần này để chứa gọi nôm na Stack là các folder chứa các file. Khi Kich chuột phải vào một stack, có một menu hiện ra và ta có thể chỉnh các thông số của stack.")
         giupMacData.addData("Top Menu", imagePath: "Top Menu.png", detail: "Ở ngay đầu bên trái là logo quả táo App. Logo này là cố định, dù bạn đang chạy phần mềm nào thì icon này cũng hiện ở đây. Và đây cũng là menu để truy cập nhanh vào các chức năng cần thiết của hệ điều hành. Một số chức năng quan trọng là:\n About This Mac: Dùng để check thông tin, cấu hình máy, xem dung lượng ổ cứng.\n Software Update: cập nhật phiên bản mới nhất cho các phần mềm và hệ điều hành trong máy. \n Force Quit: tắt tất cả các phần mềm đang chạy (trong trường hợp phần mềm đó bị treo, không tắt bình thường được).Kế tiếp chính là tên phần mềm đang chạy và mình đang sử dụng. Khi kick và tên phần mềm thì sẽ xuất hiện một menu (bất cứ phần mềm nào cũng có menu này). Chúng ta có thể coi thông tin về phần mềm này và quan trọng nhất là truy cập được vào Preferences của phần mềm đó.\n Phần còn lại chính là các menu của phần mềm. Mac có một điểm đăc biệt khác win đó là các phần mềm đang chạy, dù đang ở vị trí nào trên màn hình thì menu của nó cũng hiện ở trên Top menu này (khi ta chọn một phần mềm nào đó thì đồng thời menu của nó cũng hiện hiện Top menu ở vị trí này) phía bên phải của Top Menu \n Ngoài cùng phía bên phải chính là Spotlight - chiếc kính lúp kỳ diệu: có chứ năng search, máy tính, tra từ điển,tìm kiếm từ khóa nhanh…... Nếu bạn chưa biết nó là gì thì hãy đọc nhé. Tại đây nè: Các icon từ phải qua trái lần lượt là: Spotlight, Date time, pin, volume, tắt mở wifi, tắt mở Bluetooth và cuối cùng là Time Machine.Ta có thể cài thêm iStat menus để thay thế cho các icon mặc định và thêm một số các tính năng khác như thông tin về nhiệt độ máy, thông tin ram, tốc độ quạt, tốc độ mạng download,upload...\n Để tinh chỉnh như Đổi mật khẩu, Users,Desktop, Screen Saver, Độ phân giải màn hình, Trackpad, Chuột, Wifi, Bảo mệt dữ liệu, font chữ, bàn phím Anh hay Việt, Dock…….tất cả đều nằm trong mục Preferences (Alias hình bánh răng cưa ngay phía dưới dock hoặc Quả Táo góc trái trên cùng và -> System Preferences.")
         giupMacData.addData("Mission control", imagePath: "Mission control.png", detail: "Ở các phiên bản mac trước (< 10.7 thì gọi là Expóse & Spaces). Bảng điều khiển hiển thị đủ các cửa sổ đang mở, một đặc trưng của nền tảng Mac. Các các cửa sổ thể hiện trên màn hình. Để giúp việc chuyển đổi cửa sổ làm việc một cách hiệu quả bạn hãy thiết lập nó cho phù hơp với mình nhất.\n Active Screen Corners: phần này cho ta lựa chọn việc thể hiện trên màn hình sẽ thế nào khi ta di chuyển chuột đến 4 góc của màn hình. Trong hình minh họa trên, ở góc trái bên dưới mình chọn là All Windows. Có nghĩa là mỗi khi mình di chuyển vào góc đó thì tất cả các cửa sổ sẽ được sắp xếp lại để mình cùng 1 lúc có thể thấy hết các cửa sổ đó trên màn hình và có thể chọn cửa sổ nào mình muốn cho nó hiện lên trên cùng để làm việc.\n  Keyboard and mouse Shortcut(Expóse): Tương tự như bên trên nhưng thay vì ta di chuyển chuột đến 4 góc thì ta chọn phím tắt. Mặc định là các phím. F4 để sếp tất cả các ứng dụng lên màn hình, F3 để hiện ứng dụng bạn đang làm việc rõ lên, các ứng dụng khác sẽ mờ đi, Fn + F11 để hiện ra màn hình desktop các cửa sổ ứng dụng sẽ chạy ra 4 cạnh.\n Dashboard: Phần này quy định phím, nút để mở và tắt Dashboard., Fn + F12 thi là Dashboard, là một khu vực chứa nhiều tiện ích nhỏ như là Widgets bên Windows. Hiện đã có hàng ngàn ứng dụng nhỏ khác nhau cho Dashboard mà bạn có thể tải về từ chợ Appstore.")
         giupMacData.addData("Trackpad", imagePath: "track.png", detail: "Có thể dùng 1 ngón để click chuột, 2 ngón để trượt, xoay, phóng to thu nhỏ và 3 ngón để qua bài, qua hình. Vào đây sẽ thấy và có thể bật lên, tùy vào máy của bạn và phiên bản hệ điều hành mà bạn sẽ thấy ít hay nhiều ngón. \n   Nếu dùng hệ điều hành Mac trên dòng máy Mac, bạn có trong tay những thao tác điều khiển vô cùng độc đáo và linh hoạt bằng bàn cảm ứng Trackpad hay cả bằng chuột cảm ứng…\n “Lăn chuột”:trên Windows người ta lăn chuột để xem hết nội dung một bài báo hay một đoạn văn bản dài thì với Mac, bạn có thể dùng 2 ngón tay vuốt lên xuống.\n Duyệt trang:Bạn chuyển qua lại giữa những trang web đã mở trên Safari, hay giữa những đoạn văn bản khác nhau bằng cách dùng 2 ngón tay vuốt sang 2 bên.\nZoom thông minh:Tính năng Smart Zoom cho phép bạn dùng 2 ngón tay nhấn đúp vào bàn cảm ứng để tự động phóng to một phần trang nội dung. Hãy nhấn đúp bằng 2 ngón tay lần nữa để thu nhỏ lại.\nZoom “bằng tay”:Nếu như bạn đã quen dùng các loại smartphone thì sẽ không lạ lẫm gì thao tác này. Dùng 2 ngón tay tách ra xa nhau trên bàn Trackpad để phóng to dần nội dung đang xem và “cấu” lại để thu nhỏ.\n Mở Mission Control:dùng 3 ngón tay vuốt lên trên bàn Trackpad. Để đóng Mission Control lại, hãy dùng 3 ngón tay vuốt xuống.\n Duyệt các ứng dụng mở toàn màn hình:Bạn di chuyển qua lại giữa các ứng dụng toàn màn hình hoặc các khu ứng dụng đang mở bằng cách dùng 4 ngón tay vuốt sang 2 bên.\n Mở Launchpad: Launchpad là nơi có danh sách của tất cả các ứng dụng cài trong máy bạn.Để mở Launchpad, hãy “cấu” như thao tác zoom nhưng bằng ngón cái với 3 ngón khác. Để đóng Launchpad, hãy “cấu” ngược lại một lần nữa.\n Về Desktop:Bạn về màn hình chính Desktop từ bất kỳ đâu bằng thao tác tách giống như zoom nhưng là 5 ngón cấu ra.\n Nghiên cứu:(Chuột phải) Dùng 2 ngón tay nhấn vào bàn Trackpad, bạn sẽ có một danh sách lựa chọn để tra cứu về từ đang nằm dưới con trỏ hoặc đang được bôi đen.\n Vào Notification Center: Bạn vào trung tâm thông báo cập nhật Notification Center bằng cách dùng 2 ngón tay vuốt vào từ mép phải của Trackpad. Để rời Notification Center, hãy vuốt ngược lại.")
@@ -87,7 +209,7 @@ class MasterNSViewController: NSViewController {
         giupMacData.addData("Khôi phục mật khẩu quản trị ", imagePath: "Khoiphuc.jpg", detail: "Do đặc tính bảo mật cao, OS X yêu cầu người dùng nhập lại mật khẩu quản trị bất cứ khi nào có phần mềm cài đặt vào hệ thống hay cập nhật các ứng dụng. Nếu bạn quên... rắc rối sẽ xảy ra. Dĩ nhiên việc mò mẫm thử nhập các mật khẩu “na ná” để nhớ lại mật khẩu chính xác có thể hiệu quả, nhưng Táo đã cung cấp sẵn một tiện ích cho phép khôi phục mật khẩu quản trị. Quy trình như sau:\n Bạn cho đĩa(usb) cài OS X vào ổ quang( cắm vô cổng usb) của máy rồi khởi động lại. \n Giữ phím Alt khi máy khởi động lại để mở menu khởi động, chọn ổ quang tương ứng.\n Trong môi trường cài đặt của OS X, bạn chọn Utilities > Reset Password từ thanh công cụ và nhập vào một mật khẩu mới. \n Khởi động lại máy từ ổ cứng như bình thường và mật khẩu mới sẽ bắt đầu có tác dụng.")
         giupMacData.addData("Khôi phục kết nối Wifi bị gián đoạn ", imagePath: "Khoiphucketnoi.jpg", detail: "Không gì khó chịu bằng việc bạn không thể truy cập mạng không dây cho dù đã thử đủ mọi cách. Nếu kết nối Wifi đột ngột bị ngắt, hãy kiểm tra xem có vô tình tắt Airport của máy hay không. Ngoài ra, bạn cũng nên vào System Preferences > Network, mở AirPort > TCP/IP rồi nhấn vào Renew DHCP Lease để xem lỗi có biến mất hay không. Dĩ nhiên, bạn luôn đảm bảo đang ở trong khoảng sóng Wifi đủ mạnh để sử dụng. Biểu tượng Airport trên thanh công cụ của OS X sẽ báo hiệu điều này bằng các vạch thông báo. Đôi khi, việc tắt Airport và bật lại cũng có thể giải quyết được vấn đề kết nối vì nhiều ứng dụng lúc kết nối hay thậm chí chính công cụ Airport của OS X cũng có thể gặp trục trặc.")
         giupMacData.addData("Xem các tập tin WMV ", imagePath: "Xem.jpg", detail: "Hiện tại, bạn có thể gặp phải vô số các định dạng phim ảnh khi truy cập Internet. Dĩ nhiên, cũng như Windows, không phải định dạng nào cũng có thể xem thoải mái trên Mac. Một điển hình thường gặp chính là các tập tin…WMV – vốn là của riêng Microsoft. Để xử lý vấn đề này, bạn hãy tải bộ “codec” miễn phí Flip4Mac và cài vào máy. Flip4Mac cho phép QuickTime Player xem tốt các tập tin WMV. Ngoài ra, cách hiệu quả hơn là tải về VLC Player for Mac, giúp bạn xem được thậm chí là nhiều tập tin “lạ”. VLC cũng là thứ nên có trên máy của mọi người dùng Mac.")
-        giupMacData.addData("Các phím tắt hữu ích khi khởi động Mac ", imagePath: "Cacphimtat.jpg", detail: "Khởi động máy Mac thông thường chỉ là nhấn nút power rồi ngồi chờ màn hình desktop hiện ra. Nhưng vào một ngày xấu trời, Mac của bạn không thể khởi động vào Mac bình thường hay đơn giản là bạn muốn có một phương thức khác để khởi động Mac. Táo cung cấp cho người dùng một số các phím tắt hữu ích trong quá trình khởi động gọi là Startup Shortcut. Thao tác thực hiện là tắt nguồn Mac hoàn toàn, nhấn phím nguồn và giữ các phím sau đây.\n C khởi động trực tiếp từ USB,CD \n X khởi chạy trực tiếp vào Mac bỏ qua Startup Disk \n V khởi chạy từ Netboot server là hệ thống máy chủ- máy trạm, bạn có thể cài hoặc khởi động OS X thông qua mạng sửa dụng dịch vụ OS X Server.\n T khởi chạy chế độ Target Disk Mode. Chế độ này cho phép Mac khởi động qua cổng FireWire hay Thunderbolt, hoặc kết nối với 1 máy Mac khác như ổ đĩa ngoài \n D khởi chạy Táo hardware test - chế độ kiểm tra lỗi phần cứng cho Mac. \n OPTION khởi chạy menu boot - cho phép bạn chọn phân vùng khởi động. \n SHIFT khởi chạy safemode cho Mac. \n COMMAND R khởi chạy phân vùng RecoveryHD, cho phép bạn restore lại hệ điều hành cho Mac, hay sử dụng công cụ để sửa lỗi Mac. \n COMMAND OPTION R khởi chạy vào Táo Server, cần có kết nối internet, là một chương trình bao gồm Disk Utility có khả năng download và cài đặt OS X, hoặc restore từ Machine Backup. \n COMAND V khởi chạy vào chế độ Verbose mode - chế độ hiển thị những gì diễn ra trong quá trình khởi động Mac. \n COMMAND S khởi chạy vào Single - User mode - là chế độ đặc biệt để sửa lỗi ổ cứng. \n COMMAND OPTION R P reset PRAM - nhấn và giữ tổ hợp phím cho đến khi Mac phát ra tiếng khởi động 2 lần. Có tác dụng giải phóng PRAM đưa về cấu hình mặc định của display setting, time and date, time and zone, speaker và DVD setting, Region. ")
+        giupMacData.addData("Các phím tắt hữu ích khi khởi động Mac ", imagePath: "2727814_phim_tat.jpg", detail: "Khởi động máy Mac thông thường chỉ là nhấn nút power rồi ngồi chờ màn hình desktop hiện ra. Nhưng vào một ngày xấu trời, Mac của bạn không thể khởi động vào Mac bình thường hay đơn giản là bạn muốn có một phương thức khác để khởi động Mac. Táo cung cấp cho người dùng một số các phím tắt hữu ích trong quá trình khởi động gọi là Startup Shortcut. Thao tác thực hiện là tắt nguồn Mac hoàn toàn, nhấn phím nguồn và giữ các phím sau đây.\n C khởi động trực tiếp từ USB,CD \n X khởi chạy trực tiếp vào Mac bỏ qua Startup Disk \n V khởi chạy từ Netboot server là hệ thống máy chủ- máy trạm, bạn có thể cài hoặc khởi động OS X thông qua mạng sửa dụng dịch vụ OS X Server.\n T khởi chạy chế độ Target Disk Mode. Chế độ này cho phép Mac khởi động qua cổng FireWire hay Thunderbolt, hoặc kết nối với 1 máy Mac khác như ổ đĩa ngoài \n D khởi chạy Táo hardware test - chế độ kiểm tra lỗi phần cứng cho Mac. \n OPTION khởi chạy menu boot - cho phép bạn chọn phân vùng khởi động. \n SHIFT khởi chạy safemode cho Mac. \n COMMAND R khởi chạy phân vùng RecoveryHD, cho phép bạn restore lại hệ điều hành cho Mac, hay sử dụng công cụ để sửa lỗi Mac. \n COMMAND OPTION R khởi chạy vào Táo Server, cần có kết nối internet, là một chương trình bao gồm Disk Utility có khả năng download và cài đặt OS X, hoặc restore từ Machine Backup. \n COMAND V khởi chạy vào chế độ Verbose mode - chế độ hiển thị những gì diễn ra trong quá trình khởi động Mac. \n COMMAND S khởi chạy vào Single - User mode - là chế độ đặc biệt để sửa lỗi ổ cứng. \n COMMAND OPTION R P reset PRAM - nhấn và giữ tổ hợp phím cho đến khi Mac phát ra tiếng khởi động 2 lần. Có tác dụng giải phóng PRAM đưa về cấu hình mặc định của display setting, time and date, time and zone, speaker và DVD setting, Region. ")
         
         //        giupMacData.addData("", imagePath: "", detail: "")
         //        giupMacData.addData("", imagePath: "", detail: "")
@@ -123,6 +245,29 @@ class MasterNSViewController: NSViewController {
 
     }
     
+    func playBackgroundMusic(filename: String) {
+        let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        
+        do {
+            backgroundMusicP = try AVAudioPlayer(contentsOfURL: newURL)
+            backgroundMusicP.numberOfLoops = -1
+            backgroundMusicP.prepareToPlay()
+            backgroundMusicP.play()
+            
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window!.title = "Giúp Mac"
+    }
+    
     @IBAction func touchOSX(sender: AnyObject) {
         
         if secondNSWindowController == nil {
@@ -131,21 +276,26 @@ class MasterNSViewController: NSViewController {
         }
         secondNSWindowController?.settData(menuData[0])
         secondNSWindowController?.showWindow(self)
-        
-        print("========")
+        thirdNSWindowController?.window?.close()
 //        self.view.window?.close()
+//        backgroundMusicP.pause()
 
     }
     
     
     @IBAction func touchMayMac(sender: AnyObject) {
         
-        if secondNSWindowController == nil {
-            secondNSWindowController = SecondNSWindowController()
+        if thirdNSWindowController == nil {
+            thirdNSWindowController = ThirdNSWindowController()
             
         }
-        secondNSWindowController?.settData(menuData[1])
-        secondNSWindowController?.showWindow(self)
+        thirdNSWindowController?.settData(menuData[1])
+        thirdNSWindowController?.showWindow(self)
+        secondNSWindowController?.window?.close()
+//        backgroundMusicP.play()
     }
     
 }
+
+extension SecondNSWindowController {
+    }
