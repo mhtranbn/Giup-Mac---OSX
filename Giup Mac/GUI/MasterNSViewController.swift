@@ -138,12 +138,9 @@ extension SecondNSWindowController: NSTableViewDataSource {
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn:NSTableColumn?, row: Int) -> NSView? {
         let cellView: NSTableCellView = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! NSTableCellView
-//        if tableColumn!.identifier == "GiupMac" {
             let detailStr = data!.detailData[row]
             cellView.imageView!.image = NSImage(named: detailStr.imagePath)
             cellView.textField!.stringValue = detailStr.title
-//            return cellView
-//        }
         return cellView
         
     }
@@ -151,7 +148,6 @@ extension SecondNSWindowController: NSTableViewDataSource {
     func tableViewSelectionDidChange(notification: NSNotification) {
         let selectedGiuptt = selectedGiup()
         updateDetailInfor(selectedGiuptt)
-        print("++++++++")
     }
 }
 
@@ -164,19 +160,14 @@ class MasterNSViewController: NSViewController {
     private var thirdNSWindowController: ThirdNSWindowController?
     var menuData = Array<MenuData>()
     var backgroundMusicP : AVAudioPlayer!
+    var k:Bool = true
+    
+    @IBOutlet weak var backGroundMS: NSButton!
     @IBOutlet weak var buttonOSX: NSButton!
     @IBOutlet weak var buttonMayMac: NSButton!
-
-
-    
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
-        //Auto layout
-//        let superview = self.view.superview!
-//        let constraint = NSLayoutConstraint(item: buttonOSX, attribute: .Leading, relatedBy: .Equal, toItem: superview, attribute: .Leading, multiplier: 1.0, constant: 20)
-//        superview.addConstraints(constraint)
-//        self.title = "Giúp Mac"
-//        playBackgroundMusic("TiengSaoNguoiDaDo.mp3")
+        playBackgroundMusic("Lounge Ambient Track Sound Clips from Orange Free Sound.mp3")
         let giupMacData = MenuData(category: "macos")
         let giupMacData2 = MenuData(category: "mayMac")
         giupMacData.addData("Hệ Điều Hành Mac", imagePath: "os-x.jpg", detail: "Đối với những người dùng Windows đã quen, nay chuyển sang Mac thì đó là một sự thay đổi lớn, không phải nói là thay đổi hoàn toàn. \n Một giao diện hoàn toàn khác, Taskbar thì nằm phía trên và phía dưới là 1 thanh dock với các ứng dụng nằm trên đó. Hoàn toàn màn hình desktop không có một folder hay chương trình nào. \n Bắt đầu, click vào Finder (Finder bên Mac thì chính là My Computer bên Windows), tất cả các mục đều nằm trong Finder này. Có một phần mềm luôn chạy cùng với Mac, đó là Finder, đây chính là phần cơ bản nhất của Mac.  \n Finder có chức năng quản lý files, folders, quản lý các công việc, thao tác ... của bạn. \n Desktop là một phần trong Finder, và trong Finder cũng có 1 folders là Desktop. \n Khi ta mở một thư mục nào đó thì đó chính là Finder: \n Phía bên trái cửa sổ là Sidebar, nơi hiển thị các thông tin, Devices, Places (ở đây các bạn có thể bỏ các thư mục các bạn thích như là Dock) \n Nên ta có thể cho hiện đường dẫn của File or Folders – tại thanh bar phía dưới – bằng cách: thanh Menu – View -> Show Path Bar. \n =>Preference của Finder (phím tắt là Command + , [tất cả các ứng dụng nào khi ấn tổ hợp này là sẽ vào Preference của ứng dụng đó dùng để tinh chỉnh nhiều thứ, giống như là Options bên Windows vậy]). \n Và để coi thông tin của File hay Folder thì ta click chuột phải vào file hay folder đó, chọn Get Info, hoặc tổ hợp phím Command + I, nếu muốn xem 1 lúc nhiều file hoặc folder gộp lại thì thêm Alt (option) vậy tổ hợp phím là option + command + I")
@@ -212,9 +203,6 @@ class MasterNSViewController: NSViewController {
         giupMacData.addData("Các phím tắt hữu ích khi khởi động Mac ", imagePath: "2727814_phim_tat.jpg", detail: "Khởi động máy Mac thông thường chỉ là nhấn nút power rồi ngồi chờ màn hình desktop hiện ra. Nhưng vào một ngày xấu trời, Mac của bạn không thể khởi động vào Mac bình thường hay đơn giản là bạn muốn có một phương thức khác để khởi động Mac. Táo cung cấp cho người dùng một số các phím tắt hữu ích trong quá trình khởi động gọi là Startup Shortcut. Thao tác thực hiện là tắt nguồn Mac hoàn toàn, nhấn phím nguồn và giữ các phím sau đây.\n C khởi động trực tiếp từ USB,CD \n X khởi chạy trực tiếp vào Mac bỏ qua Startup Disk \n V khởi chạy từ Netboot server là hệ thống máy chủ- máy trạm, bạn có thể cài hoặc khởi động OS X thông qua mạng sửa dụng dịch vụ OS X Server.\n T khởi chạy chế độ Target Disk Mode. Chế độ này cho phép Mac khởi động qua cổng FireWire hay Thunderbolt, hoặc kết nối với 1 máy Mac khác như ổ đĩa ngoài \n D khởi chạy Táo hardware test - chế độ kiểm tra lỗi phần cứng cho Mac. \n OPTION khởi chạy menu boot - cho phép bạn chọn phân vùng khởi động. \n SHIFT khởi chạy safemode cho Mac. \n COMMAND R khởi chạy phân vùng RecoveryHD, cho phép bạn restore lại hệ điều hành cho Mac, hay sử dụng công cụ để sửa lỗi Mac. \n COMMAND OPTION R khởi chạy vào Táo Server, cần có kết nối internet, là một chương trình bao gồm Disk Utility có khả năng download và cài đặt OS X, hoặc restore từ Machine Backup. \n COMAND V khởi chạy vào chế độ Verbose mode - chế độ hiển thị những gì diễn ra trong quá trình khởi động Mac. \n COMMAND S khởi chạy vào Single - User mode - là chế độ đặc biệt để sửa lỗi ổ cứng. \n COMMAND OPTION R P reset PRAM - nhấn và giữ tổ hợp phím cho đến khi Mac phát ra tiếng khởi động 2 lần. Có tác dụng giải phóng PRAM đưa về cấu hình mặc định của display setting, time and date, time and zone, speaker và DVD setting, Region. ")
         
         //        giupMacData.addData("", imagePath: "", detail: "")
-        //        giupMacData.addData("", imagePath: "", detail: "")
-        //        giupMacData.addData("", imagePath: "", detail: "")
-        //        giupMacData.addData("", imagePath: "", detail: "")
         
         
         
@@ -228,23 +216,26 @@ class MasterNSViewController: NSViewController {
         giupMacData2.addData("NvRam và PRam trên máy Mac", imagePath: "resetnpram.jpg", detail: "Trước khi mang máy lại trung tâm sửa chửa thì bạn nên Reset PRAM/NVRAM thử xem có giải quyết được lỗi trên máy mac. \n Trên hệ thống bắt kì hệ thống nào những cài đặt chắc chắn sẽ được lưu vào vùng nhớ cố định cho dù hệ thống của bạn có Turn off thì những thông tin đó vẫn không mất. Trên máy Mac nền tảng Intel-based thì ta gọi đó là NVRam, còn trên PowerPC-based gọi đó là PRAM. \n NVRAM là bộ nhớ truy cập ngẫu nhiên(RAM-Random access memory). \n lữu trữ nhưng thông tin bền vững sau khi hệ thống turn off. \n PRAM cũng vậy. \n Phương pháp Resetting PRAM/NVRAM: \n 1-Tắt máy. \n 2-Những phím bạn sẽ sử dụng: Command (⌘), Option, P, and R. \n 3-Mở nguồn khi đèn báo tín hiệu ổ cứng vừa sáng thì thực hiện bước 4. \n 4-Ấn và giữ Command-Option-P-R keys, thao tác này phải thực hiện nhanh trước khi màn hình xám xuất hiện. \n 5-Giữ 4 phím đấy tới khi hệ thống phát ra âm thanh báo hiệu đang khởi động lại hệ thống. \n 6-Bỏ các phím ra.")
         giupMacData2.addData("Trackpad có vấn đề như bị loạn", imagePath: "trackpad mac error.jpg", detail: "Trackpad của bạn thỉnh thoảng bị loạn, thỉnh thoảng lại tự click, nó cứ chạy lung tung, bạn không làm gì nhưng nó vẫn tự động mở các ứng dụng khác. Cách khắc phục hay nhất là tháo ra, bỏ vào thùng gạo, sáng ra lắp lại dùng ok, nuyên nhân chính do ẩm hoặc do nước (mồ hôi) rơi vô trackpad máy.")
         //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        //        giupMacData2.addData("", imagePath: "", detail: "")
-        
         
         menuData.append(giupMacData2)
 
     }
+
     
+    @IBAction func sendMailToHoang(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func silentBackGround(sender: AnyObject) {
+        if k == true {
+            backgroundMusicP.pause()
+            k = false
+        } else {
+            backgroundMusicP.play()
+            k = true
+        }
+        
+    }
     func playBackgroundMusic(filename: String) {
         let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
         guard let newURL = url else {
@@ -277,8 +268,6 @@ class MasterNSViewController: NSViewController {
         secondNSWindowController?.settData(menuData[0])
         secondNSWindowController?.showWindow(self)
         thirdNSWindowController?.window?.close()
-//        self.view.window?.close()
-//        backgroundMusicP.pause()
 
     }
     
@@ -292,7 +281,7 @@ class MasterNSViewController: NSViewController {
         thirdNSWindowController?.settData(menuData[1])
         thirdNSWindowController?.showWindow(self)
         secondNSWindowController?.window?.close()
-//        backgroundMusicP.play()
+
     }
     
 }

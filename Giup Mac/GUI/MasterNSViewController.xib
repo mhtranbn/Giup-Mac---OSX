@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MasterNSViewController" customModule="Giup_Mac" customModuleProvider="target">
             <connections>
+                <outlet property="backGroundMS" destination="Lyb-o7-NsI" id="Oll-al-w19"/>
                 <outlet property="buttonMayMac" destination="zPm-7t-JKf" id="Ae3-pL-ubc"/>
                 <outlet property="buttonOSX" destination="v0w-T2-ydP" id="Tma-3U-EtC"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -18,8 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button identifier="MasterNSViewController" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-T2-ydP">
-                    <rect key="frame" x="57" y="64" width="153" height="32"/>
+                <button identifier="MasterNSViewController" autoresizesSubviews="NO" verticalHuggingPriority="750" placeholderIntrinsicWidth="141" placeholderIntrinsicHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-T2-ydP">
+                    <rect key="frame" x="54" y="93" width="153" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="141" id="4bK-MQ-Z0R"/>
+                        <constraint firstAttribute="height" constant="21" id="bhQ-GG-6Fx"/>
+                    </constraints>
                     <buttonCell key="cell" type="push" title="Hệ Điều Hành Mác" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hzG-be-mnA">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -28,8 +33,12 @@
                         <action selector="touchOSX:" target="-2" id="smZ-hs-MzF"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zPm-7t-JKf">
-                    <rect key="frame" x="271" y="64" width="166" height="32"/>
+                <button autoresizesSubviews="NO" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zPm-7t-JKf">
+                    <rect key="frame" x="273" y="93" width="153" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="5ZH-6E-wb5"/>
+                        <constraint firstAttribute="width" constant="141" id="tkb-Jx-gro"/>
+                    </constraints>
                     <buttonCell key="cell" type="push" title="Máy Mac" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="OZ4-0R-HAv">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -38,15 +47,80 @@
                         <action selector="touchMayMac:" target="-2" id="PGb-gG-VsN"/>
                     </connections>
                 </button>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBR-Lz-cSp">
-                    <rect key="frame" x="109" y="142" width="48" height="48"/>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TBR-Lz-cSp">
+                    <rect key="frame" x="106" y="171" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="5CC-0u-fUi"/>
+                        <constraint firstAttribute="height" constant="48" id="Akr-hx-J2q"/>
+                    </constraints>
                     <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" image="he dieu hanh mac os x" id="wQz-10-tEw"/>
                 </imageView>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfD-Jh-5oX">
-                    <rect key="frame" x="330" y="142" width="48" height="48"/>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mfD-Jh-5oX">
+                    <rect key="frame" x="326" y="171" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="KZE-dn-4cV"/>
+                        <constraint firstAttribute="width" constant="48" id="peo-CV-WiF"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="icon_Mac" id="2MH-5W-Zwq"/>
                 </imageView>
+                <textField autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OmB-UH-CDf">
+                    <rect key="frame" x="138" y="10" width="217" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="K8j-av-r0a"/>
+                        <constraint firstAttribute="width" constant="213" id="T29-7e-Z6r"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="tranmanhhoang@gmail.com - 2016" id="56x-tE-IzH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="sendMailToHoang:" target="-2" id="63V-aB-mEk"/>
+                    </connections>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lyb-o7-NsI">
+                    <rect key="frame" x="420" y="9" width="16" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="19" id="ZNA-t4-Hwc"/>
+                        <constraint firstAttribute="width" constant="13" id="mIO-ZG-1D1"/>
+                    </constraints>
+                    <buttonCell key="cell" type="radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" state="on" inset="2" id="vC1-Cj-o16">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="silentBackGround:" target="-2" id="zvs-Dp-t1U"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pxy-jo-7xs">
+                    <rect key="frame" x="437" y="13" width="40" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="gQl-oD-Ye2"/>
+                        <constraint firstAttribute="height" constant="17" id="nhY-Ga-Gd8"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Music" id="oHB-aK-atX">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="pxy-jo-7xs" secondAttribute="bottom" constant="13" id="169-Jz-DUD"/>
+                <constraint firstItem="v0w-T2-ydP" firstAttribute="top" secondItem="TBR-Lz-cSp" secondAttribute="bottom" constant="50" id="DVz-j2-EW0"/>
+                <constraint firstItem="OmB-UH-CDf" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="140" id="ETF-qP-lRz"/>
+                <constraint firstItem="zPm-7t-JKf" firstAttribute="top" secondItem="mfD-Jh-5oX" secondAttribute="bottom" constant="50" id="O4R-5k-BRA"/>
+                <constraint firstAttribute="bottom" secondItem="zPm-7t-JKf" secondAttribute="bottom" constant="100" id="RDk-BO-hHX"/>
+                <constraint firstAttribute="trailing" secondItem="pxy-jo-7xs" secondAttribute="trailing" constant="5" id="Ur7-Sh-3Xd"/>
+                <constraint firstAttribute="trailing" secondItem="zPm-7t-JKf" secondAttribute="trailing" constant="60" id="ch8-k7-9o5"/>
+                <constraint firstAttribute="bottom" secondItem="OmB-UH-CDf" secondAttribute="bottom" constant="10" id="d5n-Wl-fcL"/>
+                <constraint firstAttribute="bottom" secondItem="v0w-T2-ydP" secondAttribute="bottom" constant="100" id="j5b-Wm-la9"/>
+                <constraint firstAttribute="bottom" secondItem="Lyb-o7-NsI" secondAttribute="bottom" constant="10" id="jdv-Wv-0l8"/>
+                <constraint firstAttribute="trailing" secondItem="mfD-Jh-5oX" secondAttribute="trailing" constant="106" id="kka-6M-JRI"/>
+                <constraint firstItem="pxy-jo-7xs" firstAttribute="leading" secondItem="Lyb-o7-NsI" secondAttribute="trailing" constant="5" id="qCK-0b-FSN"/>
+                <constraint firstItem="TBR-Lz-cSp" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="106" id="y9Y-lV-40W"/>
+                <constraint firstItem="v0w-T2-ydP" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="60" id="zkS-RQ-W5W"/>
+            </constraints>
             <point key="canvasLocation" x="325" y="395"/>
         </customView>
     </objects>

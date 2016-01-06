@@ -116,10 +116,10 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="612" height="223"/>
-                                    <size key="maxSize" width="620" height="10000000"/>
+                                    <size key="maxSize" width="629" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="612" height="223"/>
-                                    <size key="maxSize" width="620" height="10000000"/>
+                                    <size key="maxSize" width="629" height="10000000"/>
                                 </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,7 +128,7 @@
                             <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Xkq-lR-QiG">
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Xkq-lR-QiG">
                             <rect key="frame" x="613" y="1" width="15" height="223"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>

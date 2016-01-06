@@ -13,9 +13,6 @@
 		322950B31C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */; };
 		322950B41C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */; };
 		322950B51C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */; };
-		322950B81C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */; };
-		322950B91C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */; };
-		322950BA1C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */; };
 		327995C71C3717AF0074FFF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327995C61C3717AF0074FFF3 /* AppDelegate.swift */; };
 		327995C91C3717AF0074FFF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327995C81C3717AF0074FFF3 /* Assets.xcassets */; };
 		327995CC1C3717AF0074FFF3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327995CA1C3717AF0074FFF3 /* MainMenu.xib */; };
@@ -25,6 +22,7 @@
 		327995F41C37184E0074FFF3 /* MasterNSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327995F21C37184E0074FFF3 /* MasterNSViewController.xib */; };
 		32ADAB0B1C38F09500FC3CDF /* ThirdNSWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADAB091C38F09500FC3CDF /* ThirdNSWindowController.swift */; };
 		32ADAB0C1C38F09500FC3CDF /* ThirdNSWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ADAB0A1C38F09500FC3CDF /* ThirdNSWindowController.xib */; };
+		32E847711C3D9239006E180A /* Lounge Ambient Track Sound Clips from Orange Free Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 32E847701C3D9239006E180A /* Lounge Ambient Track Sound Clips from Orange Free Sound.mp3 */; };
 		32FC8B0E1C37C1E1003B8AE6 /* SecondNSWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC8B0C1C37C1E1003B8AE6 /* SecondNSWindowController.swift */; };
 		32FC8B0F1C37C1E1003B8AE6 /* SecondNSWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B0D1C37C1E1003B8AE6 /* SecondNSWindowController.xib */; };
 		32FC8B111C383359003B8AE6 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FC8B101C383359003B8AE6 /* MenuData.swift */; };
@@ -195,7 +193,6 @@
 /* Begin PBXFileReference section */
 		322950AE1C3AFC80002F7F5F /* Cac phim tat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cac phim tat.png"; sourceTree = "<group>"; };
 		322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2727814_phim_tat.jpg; sourceTree = "<group>"; };
-		322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TiengSaoNguoiDaDo.mp3; sourceTree = "<group>"; };
 		327995C31C3717AF0074FFF3 /* Giup Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Giup Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		327995C61C3717AF0074FFF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327995C81C3717AF0074FFF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +208,7 @@
 		327995F21C37184E0074FFF3 /* MasterNSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterNSViewController.xib; path = GUI/MasterNSViewController.xib; sourceTree = "<group>"; };
 		32ADAB091C38F09500FC3CDF /* ThirdNSWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdNSWindowController.swift; sourceTree = "<group>"; };
 		32ADAB0A1C38F09500FC3CDF /* ThirdNSWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdNSWindowController.xib; sourceTree = "<group>"; };
+		32E847701C3D9239006E180A /* Lounge Ambient Track Sound Clips from Orange Free Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lounge Ambient Track Sound Clips from Orange Free Sound.mp3"; sourceTree = "<group>"; };
 		32FC8B0C1C37C1E1003B8AE6 /* SecondNSWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondNSWindowController.swift; path = GUI/SecondNSWindowController.swift; sourceTree = "<group>"; };
 		32FC8B0D1C37C1E1003B8AE6 /* SecondNSWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondNSWindowController.xib; path = GUI/SecondNSWindowController.xib; sourceTree = "<group>"; };
 		32FC8B101C383359003B8AE6 /* MenuData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
@@ -293,16 +291,9 @@
 		322950B61C3C418D002F7F5F /* MUSIC */ = {
 			isa = PBXGroup;
 			children = (
-				322950B71C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 */,
+				32E847701C3D9239006E180A /* Lounge Ambient Track Sound Clips from Orange Free Sound.mp3 */,
 			);
 			name = MUSIC;
-			sourceTree = "<group>";
-		};
-		322950BB1C3D3679002F7F5F /* PURELAYOUT */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PURELAYOUT;
 			sourceTree = "<group>";
 		};
 		327995BA1C3717AF0074FFF3 = {
@@ -328,7 +319,6 @@
 		327995C51C3717AF0074FFF3 /* Giup Mac */ = {
 			isa = PBXGroup;
 			children = (
-				322950BB1C3D3679002F7F5F /* PURELAYOUT */,
 				322950B61C3C418D002F7F5F /* MUSIC */,
 				327995F01C3717F20074FFF3 /* MODEL */,
 				327995EF1C3717DA0074FFF3 /* GUI */,
@@ -557,7 +547,6 @@
 				32FC8B4E1C384263003B8AE6 /*  các phím tắt hữa dụng.png in Resources */,
 				32FC8B961C384263003B8AE6 /* Keyboard.png in Resources */,
 				32FC8BD51C384263003B8AE6 /* Timtap.jpg in Resources */,
-				322950B81C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */,
 				32FC8BDE1C384263003B8AE6 /* trackpad mac error.jpg in Resources */,
 				32FC8BE11C384263003B8AE6 /* tui chong soc.png in Resources */,
 				32FC8B871C384263003B8AE6 /* Gobo.png in Resources */,
@@ -606,6 +595,7 @@
 				32FC8B5D1C384263003B8AE6 /* bao hanh viet nam.png in Resources */,
 				322950B31C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
 				32FC8B991C384263003B8AE6 /* Khoiphucketnoi.jpg in Resources */,
+				32E847711C3D9239006E180A /* Lounge Ambient Track Sound Clips from Orange Free Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,7 +617,6 @@
 				32FC8B851C384263003B8AE6 /* GiupMacOs.png in Resources */,
 				32FC8B641C384263003B8AE6 /* batery.jpg in Resources */,
 				322950B41C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
-				322950B91C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */,
 				32FC8BAC1C384263003B8AE6 /* Mission control.png in Resources */,
 				32FC8B4F1C384263003B8AE6 /*  các phím tắt hữa dụng.png in Resources */,
 				32FC8BC11C384263003B8AE6 /* resetnpram.jpg in Resources */,
@@ -685,7 +674,6 @@
 				32FC8B861C384263003B8AE6 /* GiupMacOs.png in Resources */,
 				32FC8B651C384263003B8AE6 /* batery.jpg in Resources */,
 				322950B51C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
-				322950BA1C3C4199002F7F5F /* TiengSaoNguoiDaDo.mp3 in Resources */,
 				32FC8BAD1C384263003B8AE6 /* Mission control.png in Resources */,
 				32FC8B501C384263003B8AE6 /*  các phím tắt hữa dụng.png in Resources */,
 				32FC8BC21C384263003B8AE6 /* resetnpram.jpg in Resources */,
@@ -867,22 +855,27 @@
 		327995E71C3717B00074FFF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Giup-Mac.Giup-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		327995E81C3717B00074FFF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Giup-Mac.Giup-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -890,11 +883,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup MacTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Giup-Mac.Giup-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Giup Mac/Giup MacTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giup Mac.app/Contents/MacOS/Giup Mac";
 			};
 			name = Debug;
@@ -903,11 +899,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup MacTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Giup-Mac.Giup-MacTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Giup Mac/Giup MacTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Giup Mac.app/Contents/MacOS/Giup Mac";
 			};
 			name = Release;
@@ -915,11 +913,14 @@
 		327995ED1C3717B00074FFF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup MacUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Giup-Mac.Giup-MacUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Giup Mac/Giup MacUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = "Giup Mac";
 				USES_XCTRUNNER = YES;
 			};
@@ -928,11 +929,13 @@
 		327995EE1C3717B00074FFF3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup MacUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Giup-Mac.Giup-MacUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Giup Mac/Giup MacUITests-Bridging-Header.h";
 				TEST_TARGET_NAME = "Giup Mac";
 				USES_XCTRUNNER = YES;
 			};
