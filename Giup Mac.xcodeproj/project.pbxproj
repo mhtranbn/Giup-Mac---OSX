@@ -69,9 +69,6 @@
 		32FC8B7B1C384263003B8AE6 /* Energy Saver.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B241C384263003B8AE6 /* Energy Saver.png */; };
 		32FC8B7C1C384263003B8AE6 /* Energy Saver.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B241C384263003B8AE6 /* Energy Saver.png */; };
 		32FC8B7D1C384263003B8AE6 /* Energy Saver.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B241C384263003B8AE6 /* Energy Saver.png */; };
-		32FC8B841C384263003B8AE6 /* GiupMacOs.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B2A1C384263003B8AE6 /* GiupMacOs.png */; };
-		32FC8B851C384263003B8AE6 /* GiupMacOs.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B2A1C384263003B8AE6 /* GiupMacOs.png */; };
-		32FC8B861C384263003B8AE6 /* GiupMacOs.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B2A1C384263003B8AE6 /* GiupMacOs.png */; };
 		32FC8B871C384263003B8AE6 /* Gobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B2B1C384263003B8AE6 /* Gobo.png */; };
 		32FC8B881C384263003B8AE6 /* Gobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B2B1C384263003B8AE6 /* Gobo.png */; };
 		32FC8B891C384263003B8AE6 /* Gobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FC8B2B1C384263003B8AE6 /* Gobo.png */; };
@@ -209,6 +206,7 @@
 		32ADAB091C38F09500FC3CDF /* ThirdNSWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdNSWindowController.swift; sourceTree = "<group>"; };
 		32ADAB0A1C38F09500FC3CDF /* ThirdNSWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdNSWindowController.xib; sourceTree = "<group>"; };
 		32E847701C3D9239006E180A /* Lounge Ambient Track Sound Clips from Orange Free Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lounge Ambient Track Sound Clips from Orange Free Sound.mp3"; sourceTree = "<group>"; };
+		32E847721C3E2675006E180A /* Giup Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Giup Mac.entitlements"; sourceTree = "<group>"; };
 		32FC8B0C1C37C1E1003B8AE6 /* SecondNSWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondNSWindowController.swift; path = GUI/SecondNSWindowController.swift; sourceTree = "<group>"; };
 		32FC8B0D1C37C1E1003B8AE6 /* SecondNSWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondNSWindowController.xib; path = GUI/SecondNSWindowController.xib; sourceTree = "<group>"; };
 		32FC8B101C383359003B8AE6 /* MenuData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 		32FC8B221C384263003B8AE6 /* Dock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dock.png; sourceTree = "<group>"; };
 		32FC8B231C384263003B8AE6 /* Dontrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dontrong.jpg; sourceTree = "<group>"; };
 		32FC8B241C384263003B8AE6 /* Energy Saver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Energy Saver.png"; sourceTree = "<group>"; };
-		32FC8B2A1C384263003B8AE6 /* GiupMacOs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GiupMacOs.png; sourceTree = "<group>"; };
 		32FC8B2B1C384263003B8AE6 /* Gobo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gobo.png; sourceTree = "<group>"; };
 		32FC8B2C1C384263003B8AE6 /* he dieu hanh mac os x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "he dieu hanh mac os x.png"; sourceTree = "<group>"; };
 		32FC8B2D1C384263003B8AE6 /* icon copy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "icon copy.jpg"; sourceTree = "<group>"; };
@@ -319,6 +316,7 @@
 		327995C51C3717AF0074FFF3 /* Giup Mac */ = {
 			isa = PBXGroup;
 			children = (
+				32E847721C3E2675006E180A /* Giup Mac.entitlements */,
 				322950B61C3C418D002F7F5F /* MUSIC */,
 				327995F01C3717F20074FFF3 /* MODEL */,
 				327995EF1C3717DA0074FFF3 /* GUI */,
@@ -388,7 +386,6 @@
 				32FC8B221C384263003B8AE6 /* Dock.png */,
 				32FC8B231C384263003B8AE6 /* Dontrong.jpg */,
 				32FC8B241C384263003B8AE6 /* Energy Saver.png */,
-				32FC8B2A1C384263003B8AE6 /* GiupMacOs.png */,
 				32FC8B2B1C384263003B8AE6 /* Gobo.png */,
 				322950B21C3AFCEE002F7F5F /* 2727814_phim_tat.jpg */,
 				32FC8B2C1C384263003B8AE6 /* he dieu hanh mac os x.png */,
@@ -504,6 +501,11 @@
 				TargetAttributes = {
 					327995C21C3717AF0074FFF3 = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					327995D11C3717AF0074FFF3 = {
 						CreatedOnToolsVersion = 7.2;
@@ -583,7 +585,6 @@
 				32FC8B6C1C384263003B8AE6 /* che do bao hanh.jpg in Resources */,
 				32FC8BA21C384263003B8AE6 /* Language & Text.png in Resources */,
 				32FC8B571C384263003B8AE6 /* App1.png in Resources */,
-				32FC8B841C384263003B8AE6 /* GiupMacOs.png in Resources */,
 				327995F41C37184E0074FFF3 /* MasterNSViewController.xib in Resources */,
 				32FC8BC91C384263003B8AE6 /* share.jpg in Resources */,
 				32FC8BC61C384263003B8AE6 /* share data mac win.png in Resources */,
@@ -614,7 +615,6 @@
 				32FC8B761C384263003B8AE6 /* Dock.png in Resources */,
 				32FC8B8E1C384263003B8AE6 /* icon copy.jpg in Resources */,
 				32FC8BA31C384263003B8AE6 /* Language & Text.png in Resources */,
-				32FC8B851C384263003B8AE6 /* GiupMacOs.png in Resources */,
 				32FC8B641C384263003B8AE6 /* batery.jpg in Resources */,
 				322950B41C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
 				32FC8BAC1C384263003B8AE6 /* Mission control.png in Resources */,
@@ -671,7 +671,6 @@
 				32FC8B771C384263003B8AE6 /* Dock.png in Resources */,
 				32FC8B8F1C384263003B8AE6 /* icon copy.jpg in Resources */,
 				32FC8BA41C384263003B8AE6 /* Language & Text.png in Resources */,
-				32FC8B861C384263003B8AE6 /* GiupMacOs.png in Resources */,
 				32FC8B651C384263003B8AE6 /* batery.jpg in Resources */,
 				322950B51C3AFCEE002F7F5F /* 2727814_phim_tat.jpg in Resources */,
 				32FC8BAD1C384263003B8AE6 /* Mission control.png in Resources */,
@@ -856,6 +855,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Giup Mac/Giup Mac.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -870,6 +870,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Giup Mac/Giup Mac.entitlements";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Giup Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
